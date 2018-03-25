@@ -83,10 +83,10 @@ composeStates (Source asid atrs)  (Source bsid btrs)  = Source (asid, bsid) $ co
 composeStates (Mid asid atrs)     (Mid bsid btrs)     = Mid    (asid, bsid) $ composeTransitions atrs btrs
 composeStates (Sink asid aw atrs) (Sink bsid bw btrs) = Sink   (asid, bsid) (aw <.> bw) $ composeTransitions atrs btrs
 
-compose :: Semiring s => Transducer aid a b s -> Transducer bid b c s -> Transducer (aid, bid) a c s
-compose (Source  :as)  (b:bs) = iter (composeStates a b) abs
-  where iter hd tl
--- ((Source aid atr) : atl) ((Source bid btr) : btl)  = [Source (aid, bid) []]
+-- compose :: Semiring s => Transducer aid a b s -> Transducer bid b c s -> Transducer (aid, bid) a c s
+-- compose (Source  :as)  (b:bs) = iter (composeStates a b) abs
+--   where iter hd tl
+-- -- ((Source aid atr) : atl) ((Source bid btr) : btl)  = [Source (aid, bid) []]
 
 
 transA :: Transducer Int String String Tropical

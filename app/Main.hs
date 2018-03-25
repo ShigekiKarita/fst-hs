@@ -10,4 +10,4 @@ main = do
   print (_1 <+> _0 :: Log)
   print (_1 <+> _0 :: Tropical)
   print arc
-  print (Transition arc)
+  -- print (Transition arc)
